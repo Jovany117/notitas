@@ -1,0 +1,253 @@
+/* Importar una fuente tipo "escrita a mano" de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@300;400;700&display=swap');
+
+/* ---------------------------------------------------- */
+/* VARIABLES CSS y ESTILOS GLOBALES (Paleta Vibrante) */
+/* ---------------------------------------------------- */
+:root {
+    --main-bg-color: #93d1c1; 
+    --card-bg-color: #f3ea68;
+    --primary-color: #000000; 
+    --accent-color: #FF0097; 
+    --text-color: #000000; 
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+    /* --- Paleta de 18 Colores Vibrantes --- */
+    --postit-color-1: #FF5D84; --postit-color-2: #FF74C7; --postit-color-3: #FF8F7A;
+    --postit-color-4: #FFE28C; --postit-color-5: #FCFF00; --postit-color-6: #80E961;
+    --postit-color-7: #0083FF; --postit-color-8: #563B6D; --postit-color-9: #FF0D97;
+    --postit-color-10: #FF5F5F; --postit-color-11: #FDA600; --postit-color-12: #FFEC00;
+    --postit-color-13: #DAF800; --postit-color-14: #009655; --postit-color-15: #CFBCF9;
+    --postit-color-16: #FFAEF1; --postit-color-17: #FF8ED8; --postit-color-18: #FFDEBE;
+    --postit-color-19: #FFF5BC; --postit-color-20: #f1f1fe; --postit-color-21: #00E1D9;
+
+    --clip-color: #a0a0a0; 
+}
+
+body {
+    background-color: var(--main-bg-color);
+    padding-top: 30px;
+    padding-bottom: 50px;
+    color: var(--text-color);
+    font-family: 'Kalam', cursive, sans-serif; 
+    -webkit-text-size-adjust: 100%;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: 'Permanent Marker', cursive, sans-serif; 
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+}
+
+/* ---------------------------------------------------- */
+/* ESTILOS DE TARJETAS Y RELOJ */
+/* ---------------------------------------------------- */
+.card {
+    background-color: var(--card-bg-color);
+    box-shadow: var(--shadow-light);
+    border-radius: 8px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.card-title {
+    color: var(--primary-color);
+    border-bottom: 2px dashed var(--main-bg-color); 
+    padding-bottom: 10px;
+    font-family: 'Kalam', cursive, sans-serif;
+    font-weight: 700;
+}
+
+.clock-display {
+    background-color: var(--card-bg-color);
+    color: var(--primary-color);
+    padding: 10px 25px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    font-family: 'Permanent Marker', cursive, sans-serif;
+}
+
+/* ---------------------------------------------------- */
+/* ESTILO POST-IT: TAREAS INDIVIDUALES */
+/* ---------------------------------------------------- */
+.list-group { padding: 0; list-style: none !important; }
+
+.list-group-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 18px 25px 18px 20px;
+    border: none !important;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    transform: rotate(calc((var(--random-rotation) * 1deg) - 2deg)); 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25); 
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+}
+
+/* Pseudo-elemento para el efecto de esquina curvada */
+.list-group-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 0; height: 0;
+    border-bottom: 25px solid rgba(0,0,0,0.2);
+    border-left: 25px solid transparent;
+    border-bottom-right-radius: 4px;
+    transform: translateY(1px);
+    z-index: 0;
+}
+
+/* ESTILO DE LA FECHA DENTRO DEL POST-IT */
+.task-content { display: flex; flex-direction: column; flex-grow: 1; }
+
+.task-date {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 8px;
+    border-top: 1px dashed rgba(0,0,0,0.1);
+    padding-top: 4px;
+}
+
+/* Clases de Color */
+.postit-color-1 { background-color: var(--postit-color-1) !important; }
+.postit-color-2 { background-color: var(--postit-color-2) !important; }
+.postit-color-3 { background-color: var(--postit-color-3) !important; }
+.postit-color-4 { background-color: var(--postit-color-4) !important; }
+.postit-color-5 { background-color: var(--postit-color-5) !important; }
+.postit-color-6 { background-color: var(--postit-color-6) !important; }
+.postit-color-7 { background-color: var(--postit-color-7) !important; }
+.postit-color-8 { background-color: var(--postit-color-8) !important; }
+.postit-color-9 { background-color: var(--postit-color-9) !important; }
+.postit-color-10 { background-color: var(--postit-color-10) !important; }
+.postit-color-11 { background-color: var(--postit-color-11) !important; }
+.postit-color-12 { background-color: var(--postit-color-12) !important; }
+.postit-color-13 { background-color: var(--postit-color-13) !important; }
+.postit-color-14 { background-color: var(--postit-color-14) !important; }
+.postit-color-15 { background-color: var(--postit-color-15) !important; }
+.postit-color-16 { background-color: var(--postit-color-16) !important; }
+.postit-color-17 { background-color: var(--postit-color-17) !important; }
+.postit-color-18 { background-color: var(--postit-color-18) !important; }
+.postit-color-19 { background-color: var(--postit-color-19) !important; }
+.postit-color-20 { background-color: var(--postit-color-20) !important; }
+.postit-color-21 { background-color: var(--postit-color-21) !important; }
+
+.list-group-item:hover { transform: rotate(0deg) scale(1.02); }
+
+.list-group-item.completed {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #e0e0e0 !important;
+}
+
+.task-text {
+    flex-grow: 1;
+    margin-right: 15px;
+    font-size: 1.2em;
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
+}
+
+#addTaskBtn {
+    background-color: var(--primary-color);
+    color: #CFBCF9;
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+}
+
+.delete-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none; padding: 8px 15px; border-radius: 4px;
+    font-family: 'Kalam', cursive;
+}
+
+/* ---------------------------------------------------- */
+/* ESTILO POST-IT: TAREAS INDIVIDUALES */
+/* ---------------------------------------------------- */
+.list-group { padding: 0; list-style: none !important; }
+
+.list-group-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25px 25px 15px 20px; /* Aumenté el padding superior para la tachuela */
+    margin-bottom: 20px;
+    border-radius: 4px;
+    transform: rotate(calc((var(--random-rotation) * 1deg) - 2deg)); 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25); 
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+}
+
+/* TACHUELITA PARA CADA POST-IT INDIVIDUAL */
+.list-group-item::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ff5f5f, #cc0000 60%, #800000);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border: 1px solid #a00000;
+    z-index: 10;
+}
+
+/* Esquina doblada */
+.list-group-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    border-bottom: 25px solid rgba(0,0,0,0.15);
+    border-left: 25px solid transparent;
+}
+/* ---------------------------------------------------- */
+/* RESPONSIVIDAD */
+/* ---------------------------------------------------- */
+@media (max-width: 600px) {
+    h1 { font-size: 2em; }
+    .clock-display { font-size: 1.6em; }
+    
+    .list-group-item {
+        flex-direction: column; 
+        align-items: flex-start;
+        padding: 15px 15px 15px 15px;
+    }
+    .list-group-item::after {
+        border-bottom: 20px solid rgba(0,0,0,0.2);
+        border-left: 20px solid transparent;
+    }
+
+    .task-text {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+        font-size: 1.1em;
+    }
+
+    .delete-btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+}

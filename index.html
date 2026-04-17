@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Notas de Tareas | Post-it Style</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header class="row flex-center margin-bottom-large">
+            <div class="col-12 text-center">
+                <h1 class="title">Mis Tareas Pendientes</h1>
+                <div id="clock" class="badge secondary clock-display">00:00:00</div>
+            </div>
+        </header>
+
+        <section class="row flex-center">
+            <div class="col-12 col-md-5 margin-bottom-large"> 
+                <div class="card shadow-large">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">📌 Notita Personal</h4>
+                        <p class="card-text text-muted text-center italic">Organiza tu día con un post-it.😍😊</p>
+                        
+                        <div class="form-group">
+                            <label for="taskInput">¿Qué hay que hacer?</label>
+                            <input type="text" 
+                                   class="input-block" 
+                                   id="taskInput" 
+                                   placeholder="Ej: Comprar café..."
+                                   autocomplete="off">
+                        </div>
+                        
+                        <button class="btn-block btn-secondary-outline" id="addTaskBtn">
+                            Añadir a la lista
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-7"> 
+                <div class="paper shadow-small list-container-white padding-medium">
+                    <div class="row flex-middle margin-bottom-small">
+                        <div class="col-8">
+                            <h4 class="no-margin">📋 Mis Pendientes</h4> <h5>tu puedes, llegaMOS tan lejos con AC⚡DC, QUE NADIE TE DIGA COMO VIVIR</h5>
+                        </div>
+                    </div>
+                    
+                    <hr>
+
+                    <ul id="taskList" class="list-group list-unstyled">
+                        </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
